@@ -1,0 +1,14 @@
+.container {
+  min-height: 100vh;
+  background: #0f1a1f; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+}
