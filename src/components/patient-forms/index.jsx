@@ -12,13 +12,13 @@ export default function PatientForms() {
     reset,
   } = useForm();
 
-  const [SucessMessage, setSucessMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async (data) => {
   setIsLoading(true);
-  setSucessMessage('');
+  setSuccessMessage('');
   setErrorMessage('');
 
     try {
@@ -34,13 +34,14 @@ export default function PatientForms() {
         throw new Error ('Request Failed');
       }
 
-      setSucessMessage('Patient registered sucessfully!');
+      setSuccessMessage('Patient registered sucessfully!');
       reset();
     } catch (error) {
       setErrorMessage('There was an error registering the patient.');
     } finally {
       setIsLoading(false);
     }
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -84,19 +85,21 @@ export default function PatientForms() {
         </span>
       )}
 
-      <button className={styles.submitButton} 
-      type="submit" 
-      disabled={isLoading}>
+      <button
+        className={styles.submitButton}
+        type="submit"
+        disabled={isLoading}
+      >
         {isLoading ? 'Submitting...' : 'Submit'}
-        {successMessage && (
+      </button>
+
+      {successMessage && (
         <p className={styles.successMessage}>{successMessage}</p>
       )}
 
       {errorMessage && (
         <p className={styles.errorMessage}>{errorMessage}</p>
       )}
-      </button>
     </form>
   );
 }
-};
