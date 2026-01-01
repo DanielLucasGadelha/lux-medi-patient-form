@@ -1,12 +1,17 @@
 import { NextResponse } from 'next/server';
 
 export async function POST(request) {
-  const body = await request.json();
+  try {
+    const body = await request.json();
 
-  console.log('Patient received:', body);
-
-  return NextResponse.json(
-    { message: 'Patient registered successfully' },
-    { status: 201 }
-  );
+    return NextResponse.json(
+      { message: 'Patient created successfully' },
+      { status: 201 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { message: 'Failed to create patient' },
+      { status: 500 }
+    );
+  }
 }
