@@ -1,15 +1,23 @@
 .container {
   min-height: 100vh;
-  background: #0f1a1f; 
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  padding: 24px;
+}
+
+.cardWrapper {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
-  color: white;
+  color: #0f172a;
+  text-align: center;
 }

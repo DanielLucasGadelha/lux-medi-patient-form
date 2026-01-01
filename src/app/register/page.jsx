@@ -3,9 +3,10 @@ import styles from './styles.module.css'
 
 export default function RegisterPage() {
     return (<main className={styles.container}>
-        <h1 className={styles.title}>Patient Register</h1>
-        
+        <div className={styles.cardWrapper}>
+        <h1 className={styles.title}>Patient Registration</h1>
         <PatientForms />
+      </div>
     </main>)
 
 }

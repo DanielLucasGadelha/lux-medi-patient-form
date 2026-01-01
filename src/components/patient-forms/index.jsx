@@ -46,7 +46,7 @@ export default function PatientForms() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
       <input
-        placeholder="First Name"
+        placeholder="First Name" className={styles.input}
         {...register('firstName', { required: true })}
       />
       {errors.firstName && (
@@ -56,7 +56,7 @@ export default function PatientForms() {
       )}
 
       <input
-        placeholder="Last Name"
+        placeholder="Last Name" className={styles.input}
         {...register('lastName', { required: true })}
       />
       {errors.lastName && (
@@ -66,7 +66,7 @@ export default function PatientForms() {
       )}
 
       <input
-        placeholder="Phone Number"
+        placeholder="Phone Number" className={styles.input}
         {...register('phoneNumber', { required: true })}
       />
       {errors.phoneNumber && (
@@ -76,7 +76,7 @@ export default function PatientForms() {
       )}
 
       <input
-        placeholder="Address"
+        placeholder="Address" className={styles.input}
         {...register('address', { required: true })}
       />
       {errors.address && (
